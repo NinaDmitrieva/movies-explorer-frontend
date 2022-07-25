@@ -1,0 +1,42 @@
+.not-found {
+color: black;
+min-height: 700px;
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: auto;
+}
+
+.not-found__err-number {
+color: black;
+font-size: 140px;
+font-weight: 400;
+line-height: 169px;
+margin: 0;
+}
+
+.not-found__text {
+color: black;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+text-align: center;
+margin: 5px 0 0;
+}
+
+.not-found__back {
+color: #3456F3;
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+cursor: pointer;
+margin: 184px auto 60px;
+
+}
+.not-found__back:hover {
+  color: #3b0499;
+  text-shadow: #FC0 1px 0 10px;
+}
