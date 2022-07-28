@@ -1,7 +1,17 @@
 .page {
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: white;
+  font-family: "Inter", "Woff", "Arial ", sans-serif;
 }
 
 .main {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
