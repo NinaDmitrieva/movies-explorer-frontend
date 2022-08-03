@@ -1,9 +1,10 @@
+import React from 'react';
 import './AboutProject.css';
 import ProjectTitle from '../ProjectTitle/ProjectTitle';
 
 const AboutProject = () => {
   return (
-    <section className='about-project'>
+    <section className='about-project' id='about-project'>
       <ProjectTitle title='О проекте' />
       <div className='about-project__info'>
         <div className='about-project__description'>

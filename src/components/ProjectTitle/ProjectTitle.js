@@ -1,3 +1,4 @@
+import React from 'react';
 import './ProjectTitle.css';
 
 function ProjectTitle({ title }) {

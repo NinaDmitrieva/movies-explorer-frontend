@@ -1,3 +1,4 @@
+import React from 'react';
 import './NavTab.css';
 
 const NavTab = () => {
@@ -13,13 +14,13 @@ const NavTab = () => {
         </li>
 
         <li className="nav__list-item">
-          <a className="nav__link" href="#technology">
+          <a className="nav__link" href="#techs">
             Технологии
           </a>
         </li>
 
         <li className="nav__list-item">
-          <a className="nav__link" href="#student">
+          <a className="nav__link" href="#me">
             Студент
           </a>
         </li>
