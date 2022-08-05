@@ -1,0 +1,13 @@
+.movies-list {
+  padding: 0 70px;
+}
+
+.movies-list_content {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 32px;
+  grid-template-columns: repeat(auto-fit,270px);
+  margin: 70px auto 30px;
+  justify-content: center;
+
+}

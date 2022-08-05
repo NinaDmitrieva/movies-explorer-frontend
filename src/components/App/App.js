@@ -19,10 +19,10 @@ function App() {
           <Route path='/' element={<Main />}></Route>
           <Route path='/movies' element={<Movies />}></Route>
           <Route path= '/saved-movies' element={<SavedMovies />}></Route>
-          <Route path='profile' element={<Profile />}></Route>
-          <Route path= 'signup' element={<Register />}></Route>
-          <Route path= 'signin' element={<Login />}></Route>
-          <Route path='*' element={<NotFound />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
+          <Route path= '/signup' element={<Register />}></Route>
+          <Route path= '/signin' element={<Login />}></Route>
+          <Route path='/*' element={<NotFound />}></Route>
 
         </Routes>
 
