@@ -27,7 +27,7 @@
 .about-me__info-text {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  width: 60%;
 }
 
 .about-me__info-text__name {
@@ -42,7 +42,6 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
-
 }
 
 .about-me__info-text__text {
@@ -50,14 +49,13 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-
 }
 
 .about-me__info-text__nav {
   display: flex;
   flex-direction: row;
-  margin-top: 99px;
-
+  margin-top: 105px;
+  gap: 20px;
 }
 
 .about-me__info-text__nav-element {
@@ -73,7 +71,6 @@
   transition: opacity linear 0.5s;
 }
 
-
 .about-me__portfolio {
   display: flex;
   flex-direction: column;
@@ -87,7 +84,6 @@
   font-weight: 400;
   line-height: 20px;
   margin-bottom: 50px;
-
 }
 
 .about-me__portfolio-text {
@@ -101,6 +97,109 @@
   line-height: 50px;
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 19px;
+}
 
+.about-me__portfolio-text:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity linear 0.8s;
+}
 
+@media screen and (max-width: 900px){
+  .about-me {
+  padding: 0 50px;
+}
+  .about-me__portfolio {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px ;
+  margin-bottom: 90px;
+}
+}
+
+@media screen and (max-width: 768px){
+  .about-me__info-text__name {
+  font-size: 40px;
+  line-height: 40px;
+}
+.about-me__info-text__job {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 18px;
+
+}
+.about-me__info-text__text {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 18px;
+
+}
+.about-me__info-foto {
+  width: 255px;
+  height: 307px;
+}
+.about-me__info-text {
+  padding-right: 49px;
+}
+.about-me__portfolio-title {
+  margin-top: 0;
+}
+}
+
+@media screen and (max-width: 620px){
+ .about-me__info-text__name {
+  font-size: 40px;
+  line-height: 40px;
+}
+.about-me__info-text__job {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 18px;
+
+}
+.about-me__info-text__text {
+  font-size: 11px;
+  line-height: 16px;
+
+}
+
+.about-me__portfolio-title {
+  color: #A0A0A0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about-me__portfolio-text {
+  font-size: 18px;
+  line-height: 28px;
+}
+}
+
+@media screen and (max-width: 450px){
+.about-me {
+  padding: 0 14px;
+}
+.about-me__content {
+  margin-top: 60px;
+}
+.about-me__info {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.about-me__info-text {
+  padding-top: 40px;
+  padding-right: 0px;
+  width: 100%;
+}
+.about-me__info-text__job {
+  margin-top: 20px;
+}
+.about-me__info-text__nav {
+  margin-top: 40px;
+  gap: 26px;
+}
+.about-me__portfolio {
+  margin-top: 70px ;
+  margin-bottom: 70px;
+}
 }

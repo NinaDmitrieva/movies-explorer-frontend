@@ -22,7 +22,6 @@
 
 .search-form__input {
   height: 72px;
-  /* height: 100%; */
   width: 92%;
   border: none;
   color: #A0A0A0;
@@ -51,4 +50,29 @@
   transition: opacity linear 0.7s;
 }
 
+@media screen and (max-width: 768px){
+.search {
+  margin: 0 30px;
+}
+}
+
+@media screen and (max-width: 450px){
+.search {
+  margin: 0 14px;
+}
+.search-form__input {
+  height: 56px;
+  width: 92%;
+  font-size: 16px;
+  line-height: 16px;
+}
+.search-form__content {
+  padding-right: 6px;
+  padding-left: 12px;
+}
+.search-form__button {
+  width: 80px;
+  height: 44px;
+}
+}
 

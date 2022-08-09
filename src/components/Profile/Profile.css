@@ -1,5 +1,5 @@
 .profile__content {
-  padding: 236px 0 269px;
+  padding-top: 74px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,12 +11,12 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
-
+  margin: 0;
 }
 
 .profile__content-user {
   min-width: 410px;
-  padding-top: 96px;
+  padding-top: 123px;
   padding-bottom: 220px;
 }
 
@@ -60,7 +60,9 @@
 .profile__content-btn__edit-btn {
   border: none;
   background-color: #fff;
-
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
 }
 
 .profile__content-btn__edit-btn:hover {
@@ -74,11 +76,34 @@
   color: #EE3465;
   border: none;
   background-color: #fff;
-
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
 }
 
 .profile__content-btn__exit-btn:hover {
   cursor: pointer;
   opacity: 0.5;
   transition: opacity linear 0.5s;
+}
+
+@media screen and (max-width: 768px){
+  .profile__content-user {
+    padding-bottom: 210px;
+ }
+}
+
+@media screen and (max-width: 450px){
+.profile__content {
+  padding-top: 70px;
+}
+.profile__content-hello {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.profile__content-user {
+  min-width: 260px;
+  padding-top: 80px;
+  padding-bottom: 379px;
+}
 }

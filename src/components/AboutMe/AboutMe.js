@@ -12,9 +12,10 @@ const AboutMe = () => {
           <div className='about-me__info-text'>
             <h2 className='about-me__info-text__name'>Нина</h2>
             <p className='about-me__info-text__job'>Фронтенд-разработчик</p>
-            <p className='about-me__info-text__text'>Тут будет текст о себе приблизительно вот именно такого объема. возможно, я добавлю пару фраз.но потом, но это не точно</p>
+            <p className='about-me__info-text__text'>Тут должен быть текст обо мне, но копипастить то,что есть в макете жутко скучно, а писать что то новое - на это нужно время, поэтому я вернусь к этому пункту чуть позже, потому что адаптив сам себя не сделает.будет смешно, если я забуду удалить этот текст</p>
             <nav className='about-me__info-text__nav'>
               <a className='about-me__info-text__nav-element' href='https://github.com/NinaDmitrieva'>Github</a>
+              <a className='about-me__info-text__nav-element' href='https://ru-ru.facebook.com'>Facebook</a>
             </nav>
           </div>
         <div className='about-me__info-foto'>

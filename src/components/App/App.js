@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import NotFound from '../NotFound/NotFound';
@@ -11,6 +10,7 @@ import Movies from '../Movies/Movies';
 
 
 function App() {
+
   return (
     <div className="page">
 

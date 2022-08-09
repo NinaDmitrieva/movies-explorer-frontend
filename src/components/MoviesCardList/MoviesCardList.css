@@ -1,13 +1,21 @@
 .movies-list {
-  padding: 0 70px;
-}
-
-.movies-list_content {
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 32px;
   grid-template-columns: repeat(auto-fit,270px);
   margin: 70px auto 30px;
   justify-content: center;
+}
 
+@media screen and (max-width: 768px){
+.movies-list {
+  grid-template-columns: repeat(auto-fit,339px);
+}
+}
+
+@media screen and (max-width: 450px){
+.movies-list {
+  margin: 63px auto 30px;
+  grid-template-columns: repeat(auto-fit,300px);
+}
 }

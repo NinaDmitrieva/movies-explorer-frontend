@@ -6,7 +6,7 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 function MoviesCardList() {
   return (
     <section className='movies-list'>
-      <div className='movies-list_content'>
+
       {/* <Preloader /> */}
       <MoviesCard />
       <MoviesCard />
@@ -17,7 +17,7 @@ function MoviesCardList() {
       <MoviesCard />
       <MoviesCard />
       <MoviesCard />
-      </div>
+
     </section>
   )
 }

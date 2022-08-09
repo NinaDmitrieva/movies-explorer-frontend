@@ -32,3 +32,18 @@
   opacity: 0.5;
   transition: opacity linear 0.5s;
 }
+
+@media screen and (max-width: 620px){
+ .nav__list{
+  gap: 6px;
+}
+.nav__link{
+  font-size: 10px;
+}
+.nav__list-item{
+  background-color: #E8E8E8;
+  border-radius: 8px;
+  padding: 5px 20px;
+
+}
+}

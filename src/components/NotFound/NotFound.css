@@ -16,6 +16,7 @@ font-size: 140px;
 font-weight: 400;
 line-height: 169px;
 margin: 0;
+padding-top: 246px;
 }
 
 .not-found__text {
@@ -34,9 +35,35 @@ font-weight: 400;
 line-height: 17px;
 cursor: pointer;
 margin: 184px auto 60px;
-
 }
 .not-found__back:hover {
   color: #3b0499;
   text-shadow: #FC0 1px 0 10px;
+}
+
+@media screen and (max-width: 768px){
+.not-found__err-number {
+  padding-top: 408px;
+}
+}
+
+@media screen and (max-width: 450px){
+.not-found__err-number {
+  padding-top: 329px;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 97px;
+}
+.not-found__text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin: 10px 0 0;
+}
+.not-found__back{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin: 284px auto 0;
+}
 }
