@@ -13,6 +13,7 @@
   top: 0;
   width: 68%;
   z-index: 10;
+  position: fixed;
 }
 
 .menu__left {
@@ -30,10 +31,11 @@
 
 .menu_opened{
   display: flex;
+
 }
 
 .menu-btn {
-  background-image:url(../../images/close.png);
+  background-image:url(../../images/closeIcon.svg);
   background-color: #FAFAFA;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,7 +99,7 @@
 }
 
 .menu__acc-img {
-  background-image:url(../../images/profile.png);
+  background-image:url(../../images/profileIcon.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: #F4F4F4;

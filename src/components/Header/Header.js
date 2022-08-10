@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { React, useState, useEffect } from 'react'
 import { useLocation } from "react-router-dom";
 import './Header.css';
@@ -35,6 +36,14 @@ useEffect(() => {
     return (
       <section className='header'>
         <img className='header__logo' src={Logo} alt='Лого' />
+
+        {location.pathname === "/" && (
+
+          <nav className='header__link'>
+            <Link className='header__link-element' to='/signup'>Регистрация</Link >
+            <Link className='header__link-element' to='/signin'>Войти</Link >
+          </nav>
+        )}
 
         {location.pathname === '/movies' && (
           <>
@@ -82,10 +91,11 @@ useEffect(() => {
       <img className='header__logo' src={Logo} alt='Лого' />
 
       {location.pathname === "/" && (
-      <div className='header__link'>
-        <a className='header__link-element' href='/siginup'>Регистрация</a>
-        <a className='header__link-element' href='/sigin'>Войти</a>
-      </div>
+
+      <nav className='header__link'>
+          <Link className='header__link-element' to='/signup'>Регистрация</Link >
+          <Link className='header__link-element' to='/signin'>Войти</Link >
+      </nav>
       )}
 
       {location.pathname === '/movies' && (

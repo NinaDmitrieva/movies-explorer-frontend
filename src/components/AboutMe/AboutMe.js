@@ -23,13 +23,13 @@ const AboutMe = () => {
         </div>
         </div>
       </div>
-
       <div className='about-me__portfolio'>
         <h3 className='about-me__portfolio-title'>Портфолио</h3>
-        <a className='about-me__portfolio-text' href='https://ninadmitrieva.github.io/how-to-learn'>Статичный сайт <span className="about-me__portfolio-span">&#8599;</span></a>
-        <a className='about-me__portfolio-text' href='https://ninadmitrieva.github.io/russian-travel/'>Адаптивный сайт  <span className="about-me__portfolio-span">&#8599;</span></a>
-        <a className='about-me__portfolio-text' href='http://domainname.mesto-full.nomoreparties.sbs'>Одностраничное приложение  <span className="about-me__portfolio-span">&#8599;</span></a>
+        <a className='about-me__portfolio-text' href='https://ninadmitrieva.github.io/how-to-learn'>Статичный сайт <span className="about-me__portfolio-span">↗</span></a>
+        <a className='about-me__portfolio-text' href='https://ninadmitrieva.github.io/russian-travel/'>Адаптивный сайт  <span className="about-me__portfolio-span">↗</span></a>
+        <a className='about-me__portfolio-text' href='http://domainname.mesto-full.nomoreparties.sbs'>Одностраничное приложение  <span className="about-me__portfolio-span">↗</span></a>
       </div>
+
     </section>
   )
 }

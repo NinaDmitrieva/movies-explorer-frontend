@@ -4,11 +4,10 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  background-image: url(../../images/icon__burger.png);
+  background-image: url(../../images/burgerIcon.svg);
   width: 40px;
   height: 43px;
-
-    padding: 0;
+  padding: 0;
   border: none;
   font: inherit;
   color: inherit;

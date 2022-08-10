@@ -30,7 +30,7 @@
   font-weight: 500;
   line-height: 16px;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .header__link-element:hover {
