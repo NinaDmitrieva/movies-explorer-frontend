@@ -50,7 +50,7 @@
 }
 
 .profile__content-btn {
-  min-width: 410px;
+  max-width: 410px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -106,4 +106,5 @@
   padding-top: 80px;
   padding-bottom: 379px;
 }
+
 }

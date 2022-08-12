@@ -8,9 +8,9 @@ const Footer = () => {
       <div className='footer__info'>
         <span className='footer__info-span'>© 2022</span>
         <nav className='footer__info-nav'>
-          <a className='footer__info-nav__element' href='https://practicum.yandex.ru'>Яндекс.Практикум</a>
-          <a className='footer__info-nav__element' href='https://github.com/NinaDmitrieva'>Github</a>
-          <a className='footer__info-nav__element' href='https://ru-ru.facebook.com'>Facebook</a>
+          <a className='footer__info-nav__element' href='https://practicum.yandex.ru' target="_blank" rel="noreferrer">Яндекс.Практикум</a>
+          <a className='footer__info-nav__element' href='https://github.com/NinaDmitrieva' target="_blank" rel="noreferrer">Github</a>
+          <a className='footer__info-nav__element' href='https://ru-ru.facebook.com' target="_blank" rel="noreferrer">Facebook</a>
         </nav>
       </div>
     </section>

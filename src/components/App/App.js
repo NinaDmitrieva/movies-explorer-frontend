@@ -9,12 +9,16 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Movies from '../Movies/Movies';
 
 
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
+
 function App() {
 
   return (
     <div className="page">
 
-        <Routes>
+        {/* <Routes>
 
           <Route path='/' element={<Main />}></Route>
           <Route path='/movies' element={<Movies />}></Route>
@@ -24,8 +28,49 @@ function App() {
           <Route path= '/signin' element={<Login />}></Route>
           <Route path='/*' element={<NotFound />}></Route>
 
-        </Routes>
+        </Routes> */}
+      <Routes>
 
+          <Route path='/' element={
+            <>
+            <Header />
+            <Main />
+            <Footer />
+            </>
+            }>
+          </Route>
+
+          <Route path='/movies' element={
+          <>
+            <Header />
+            <Movies />
+            <Footer />
+          </>
+          }>
+          </Route>
+
+          <Route path= '/saved-movies' element={
+          <>
+            <Header />
+            <SavedMovies />
+            <Footer />
+          </>
+          }>
+          </Route>
+
+          <Route path='/profile' element={
+          <>
+            <Header />
+            <Profile />
+          </>
+          }>
+          </Route>
+
+          <Route path= '/signup' element={<Register />}></Route>
+          <Route path= '/signin' element={<Login />}></Route>
+          <Route path='/*' element={<NotFound />}></Route>
+
+        </Routes>
     </div>
 
   );

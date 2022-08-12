@@ -1,11 +1,9 @@
 import React from 'react';
 import './Profile.css';
-import Header from '../Header/Header';
 
 const Profile = () => {
   return (
     <section className='profile'>
-      <Header />
       <div className='profile__content'>
         <h3 className='profile__content-hello'>Привет, Виталий!</h3>
         <form className='profile__content-user'>

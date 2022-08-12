@@ -19,11 +19,12 @@
   display: flex;
   justify-content: space-between;
   border-radius: 8px;
-  border: 1.5px solid #AAAAAA;
+  border: 1.5px solid #eeeeee;
   align-items: center;
   padding-right: 10px;
   padding-left: 25px;
 }
+
 
 .search-form__input {
   height: 72px;
