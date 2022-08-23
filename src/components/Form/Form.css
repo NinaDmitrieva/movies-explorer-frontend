@@ -48,6 +48,17 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
+
+   margin-top: 85px;
+}
+
+
+.form-btn__item-disabled{
+  cursor: default;
+  background: #F4F4F4;
+  color: #A0A0A0;
+  border: none;
+  border-radius: 3px;
 }
 
 .form-btn__item:hover {
@@ -85,6 +96,9 @@
   .form-up {
     padding-top: 232px;
  }
+ .form-btn__item {
+   margin-top: 69px;
+}
 }
 
 @media screen and (max-width: 450px){
@@ -114,4 +128,8 @@
   font-weight: 500;
   line-height: 14.72px;
 }
+ .form-btn__item {
+   margin-top: 157px;
 }
+}
+

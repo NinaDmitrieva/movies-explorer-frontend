@@ -22,6 +22,15 @@
   transition: opacity linear 0.5s;
 }
 
+.movies-form__error{
+  position: absolute;
+  color: #EE3465;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 0 70px;
+  min-width: 250px;
+}
+
 @media screen and (max-width: 768px){
 .btn-content {
   padding: 0 30px;

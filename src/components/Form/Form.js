@@ -1,8 +1,8 @@
 import React from 'react';
 import './Form.css';
-import Logo from '../../images/logo.svg'
+import Logo from '../../images/logo.svg';
 
-function Form({ title, children, btntext, text, path, pathname }) {
+function Form({ title, children, btntext, text, path, pathname, isValid, onSubmit }) {
 
   return (
     <div className='form'>
@@ -12,18 +12,22 @@ function Form({ title, children, btntext, text, path, pathname }) {
         <h3 className='form-up-title'>{title}</h3>
       </div>
 
-      <form className='form-content'>
+      <form
+        className='form-content'
+        onSubmit={onSubmit}
+        noValidate
+        >
         {children}
-      </form>
+        <div className='form-btn'>
+          <button className={`form-btn__item ${!isValid && "form-btn__item-disabled"
+            }`} disabled={isValid ? false : true} type='submit'>{btntext}</button>
 
-      <div className='form-btn'>
-        <button className='form-btn__item' type='submit'>{btntext}</button>
-
-          <p className='form-btn__item-text'>{ text }
-            <a className='form-btn__item-path' href={ path }>{ pathname }</a>
+          <p className='form-btn__item-text'>{text}
+            <a className='form-btn__item-path' href={path}>{pathname}</a>
           </p>
-          
-      </div>
+
+        </div>
+      </form>
 
     </div>
 

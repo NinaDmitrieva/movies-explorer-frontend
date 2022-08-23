@@ -23,6 +23,10 @@
   margin-bottom: 179px;
 }
 
+.input__error-activ {
+  color: #EE3465;
+}
+
 .input__error {
   color: #EE3465;
 }

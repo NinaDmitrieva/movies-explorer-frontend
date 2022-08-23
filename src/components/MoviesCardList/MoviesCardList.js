@@ -1,22 +1,28 @@
-import React from 'react';
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
-// import Preloader from '../Preloader/Preloader';
 
-function MoviesCardList() {
+function MoviesCardList({
+  movies,
+  moviesCardList,
+  onSave,
+  onDelete,
+  isSaved,
+}) {
+
   return (
     <section className='movies-list'>
 
-      {/* <Preloader /> */}
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
+      {movies.map((moviesCard) => (
+        <MoviesCard
+          key={moviesCard.id || moviesCard.movieId}
+          moviesCard={moviesCard}
+          moviesCardList={moviesCardList}
+          onSave={onSave}
+          onDelete={onDelete}
+          isSaved={isSaved}
+        />
+      ))}
+
 
     </section>
   )
