@@ -55,12 +55,14 @@
   background-image:url(../../images/delBTN.svg);
   background-repeat: no-repeat;
   background-position: center;
+  border: none;
+  background-color: #ffff;
 
 }
 
 .movies-card__content-btn-like-activ{
   background:#2BE080;
-;
+
 }
 
 /* .movies-card__content-btn-like::before {

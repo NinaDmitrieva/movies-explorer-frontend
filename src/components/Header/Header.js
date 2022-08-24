@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { React, useState, useEffect } from 'react'
 import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Header.css';
 import Logo from '../../images/logo.svg';
 import Navigation from '../Navigation/Navigation';
@@ -35,8 +36,7 @@ useEffect(() => {
   if (width < breakpoint) {
     return (
       <section className='header'>
-        <img className='header__logo' src={Logo} alt='Лого' />
-
+          <img className='header__logo' src={Logo} alt='Лого' />
         {location.pathname === "/" && (
 
           <nav className='header__link'>
@@ -88,7 +88,9 @@ useEffect(() => {
 
   return (
     <section className='header'>
-      <img className='header__logo' src={Logo} alt='Лого' />
+      <NavLink to="/">
+        <img className='header__logo' src={Logo} alt='Лого' />
+        </NavLink>
 
       {location.pathname === "/" && (
 

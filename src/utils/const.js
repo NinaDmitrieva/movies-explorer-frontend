@@ -1,4 +1,4 @@
-export const MOVIES_URL = 'https://api.nomoreparties.co/';
+export const MOVIES_URL = 'https://api.nomoreparties.co';
 export const GET_MOVIES_Url = "https://api.nomoreparties.co/beatfilm-movies";
 export const BASE_URL = 'https://api.getmovies.nomoredomains.xyz';
 export const DEF_IMG ='https://portal-kultura.ru/upload/iblock/5df/cinema-geabd9454f_1920.jpg';

@@ -7,7 +7,6 @@ export default function reqResponse(res) {
   return Promise.reject(`Все сломалось${res.status}`)
 }
 
-
 export function getUser() {
   const token = localStorage.getItem('jwt');
   return fetch(`${BASE_URL}/users/me`, {
@@ -18,7 +17,6 @@ export function getUser() {
   })
     .then(reqResponse);
 }
-
 
 export function setUpdateUserInfo(name, email) {
   const token = localStorage.getItem('jwt');
@@ -48,7 +46,6 @@ export function getSavedMovies() {
     .then(reqResponse);
 }
 
-
 export function saveMovie(data) {
   const token = localStorage.getItem('jwt');
   return fetch(`${BASE_URL}/movies`, {
@@ -62,8 +59,6 @@ export function saveMovie(data) {
   })
     .then(reqResponse)
 }
-
-
 
 export function deleteMovie(movieId) {
   const token = localStorage.getItem('jwt');

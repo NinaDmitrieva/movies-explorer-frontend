@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     loggedIn && handleGetUser()
   }, [loggedIn])
-  
+
 
   // получение фильмов юзера
   useEffect(() => {
@@ -46,15 +46,15 @@ function App() {
       MainApi
         .getSavedMovies()
         .then((data) => {
-          setSavedMovies(
-            data.filter((item) => item.owner === currentUser._id)
-          )
+
+          setSavedMovies(data)
         })
         .catch((err) => {
           console.log(err)
         })
     }
   }, [currentUser])
+
 
   function handleTokenCheck() {
     const jwt = localStorage.getItem('jwt');
@@ -108,10 +108,24 @@ function App() {
 
   //сохранение фильмов в сохраненках
   const handleSaveMovie = (movie) => {
+    const newMovie = {
+      country: movie.country || 'unknown',
+      director: movie.director || 'unknown',
+      duration: movie.duration,
+      year: movie.year || 'no data',
+      description: movie.description || 'no data',
+      image: movie.image,
+      trailerLink: movie.trailerLink,
+      thumbnail: movie.thumbnail,
+      movieId: movie.id,
+      nameRU: movie.nameRU || 'no name',
+      nameEN: movie.nameEN || 'no name',
+    }
+
     MainApi
-      .saveMovie(movie)
+      .saveMovie(newMovie)
       .then((newMovie) => {
-        setSavedMovies([newMovie.data, ...savedMovies])
+        setSavedMovies([newMovie, ...savedMovies])
       })
       .catch((err) => {
         console.log(err)
@@ -120,6 +134,8 @@ function App() {
 
       })
   }
+
+
   //удаление фильма из Сохраненных фильмов
   const handleDeleteMovie = (movie) => {
     MainApi
@@ -157,7 +173,6 @@ function App() {
       })
   }
   console.log()
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

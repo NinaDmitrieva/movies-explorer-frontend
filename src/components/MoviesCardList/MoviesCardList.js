@@ -7,6 +7,7 @@ function MoviesCardList({
   onSave,
   onDelete,
   isSaved,
+  isMarked,
 }) {
 
   return (
@@ -20,6 +21,7 @@ function MoviesCardList({
           onSave={onSave}
           onDelete={onDelete}
           isSaved={isSaved}
+          isMarked={isMarked}
         />
       ))}
 

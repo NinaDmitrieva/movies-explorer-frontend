@@ -1,13 +1,14 @@
 import React from 'react';
 import './MoviesCard.css';
-
 import { useLocation, matchPath } from 'react-router'
+import SaveBtn from '../SaveBtn/SaveBtn';
 
 function MoviesCard({
   moviesCard,
   moviesCardList,
   onSave,
   onDelete }){
+
 
   const isSaved =
     moviesCard.id && moviesCardList.some((m) => m.movieId === moviesCard.id)
@@ -31,7 +32,7 @@ function MoviesCard({
   }
 
   return (
-    <div className='movies-card' key={moviesCard.id}>
+    <div className='movies-card'>
       <a
         className="movies-card__link"
         href={moviesCard.trailerLink}
@@ -50,19 +51,10 @@ function MoviesCard({
           <p className='movies-card__content-text-duration'>{moviesCard.duration}</p>
         </div>
         {matchPath({ path: '/movies' }, location.pathname) && (
-          <button
-            type="button"
-            className={
-              !isSaved
-                ? 'movies-card__content-btn-like'
-                : 'movies-card__content-btn-like movies-card__content-btn-like-activ'
-            }
-            //className='movies-card__content-btn-like movies-card__content-btn-like-activ'
-            //className={`movies-card__content-btn-like ${isSaved && 'movies-card__content-btn-like-activ'}`}
-            //isSavedMovie={isSaved}
+          <SaveBtn
+            isSavedMovie={isSaved}
             onClick={handleClickMovie}
           />
-
         )}
         {matchPath({ path: '/saved-movies' }, location.pathname) && (
           <button
@@ -71,9 +63,6 @@ function MoviesCard({
             onClick={handleDeleteClick}
           />
         )}
-        {/* <button
-          type='checkbox'
-          className='movies-card__content-btn-like' /> */}
       </div>
     </div>
 

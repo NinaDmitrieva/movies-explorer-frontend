@@ -16,7 +16,6 @@ function Register({ onRegister }){
     resetForm();
   }
 
-
   return (
     <Form
       title='Добро пожаловать!'

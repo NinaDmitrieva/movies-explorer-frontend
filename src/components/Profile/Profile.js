@@ -1,9 +1,8 @@
-
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 
-function Profile({ onSignOut, userChange }) {
+function Profile({ onSignOut, userChange, message }) {
 
   const currentUser = React.useContext(CurrentUserContext)
   const [name, setName] = useState('')
@@ -13,18 +12,14 @@ function Profile({ onSignOut, userChange }) {
   const [isInputDisabled, setIsInputDisabled] = useState(true)
   const [isFormValid, setIsFormValid] = useState(false)
 
+
   useEffect(() => {
     setName(currentUser.name)
     setEmail(currentUser.email)
   }, [currentUser])
 
   const handleChangeName = (e) => {
-    const validName = /[а-яА-Яa-zA-ZёË\- ]{1,}/i.test(
-      e.target.value
-    )
-    if (!validName) {
-      setErrorName('Неверный формат имени.')
-    } else if (!e.target.value.length) {
+ if (!e.target.value.length) {
       setErrorName('Имя пользователя должно быть заполнено.')
     } else if (e.target.value.length < 2) {
       setErrorName('Имя пользователя должно быть не менее 2 символов.')
@@ -61,7 +56,6 @@ function Profile({ onSignOut, userChange }) {
     handleInputDisabled()
   }
 
-
   useEffect(() => {
     if (errorName || errorEmail) {
       setIsFormValid(false)
@@ -83,7 +77,7 @@ function Profile({ onSignOut, userChange }) {
 
     <section className='profile'>
       <div className='profile__content'>
-        <h3 className='profile__content-hello'>Привет, {name}!</h3>
+        <h3 className='profile__content-hello'>{`Привет, ${currentUser.name}!`}</h3>
         <form className='profile__content-user' onSubmit={handleSubmitProfileForm}>
 
           <label className='profile__content-input profile__content-input-line'>
@@ -92,7 +86,6 @@ function Profile({ onSignOut, userChange }) {
               className='profile__content-user-nama profile__content-user-info'
               type='text'
               placeholder='Имя'
-              required
               value={name || ''}
               onChange={handleChangeName}
               disabled={!isInputDisabled}
@@ -109,7 +102,6 @@ function Profile({ onSignOut, userChange }) {
               name='email'
               type='text'
               placeholder='E-mail'
-              required
               value={email || ''}
               onChange={handleChangeEmail}
               disabled={!isInputDisabled}
@@ -119,6 +111,7 @@ function Profile({ onSignOut, userChange }) {
           <span className="input__error-profile">
             {errorEmail}
           </span>
+
           <div className='profile__content-btn'>
             <button
               className='profile__content-btn__edit-btn'
