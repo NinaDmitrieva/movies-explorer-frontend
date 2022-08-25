@@ -183,13 +183,13 @@ export function Movies({
         )
       )}
       <div className="btn-content">
-       <button
-        className="btn-content__btn-more"
-        type="button"
-        disabled={isMore}
-        onClick={handleMoreMoviesLoad}
-        >Ещё
-      </button>
+        {isMore &&
+          <button
+            className="btn-content__btn-more"
+            type="button"
+            onClick={handleMoreMoviesLoad}
+          >Ещё
+          </button>}
       </div>
     </section>
   )

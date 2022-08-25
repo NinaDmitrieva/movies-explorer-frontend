@@ -12,7 +12,7 @@
 [макет](https://www.figma.com/file/f9vZoUyjKT6SBKIKKAZrjK/Diploma-(Copy)?node-id=891%3A3857)
 [сайт](https://getmovies.nomoredomains.sbs/)
 
-[пул реквест](https://getmovies.nomoredomains.sbs/)
+[пул реквест](https://github.com/NinaDmitrieva/movies-explorer-frontend/pull/2)
 
 
 
