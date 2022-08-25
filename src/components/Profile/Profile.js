@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 
-function Profile({ onSignOut, userChange, message }) {
+function Profile({ onSignOut, userChange}) {
 
   const currentUser = React.useContext(CurrentUserContext)
   const [name, setName] = useState('')
@@ -18,11 +18,20 @@ function Profile({ onSignOut, userChange, message }) {
     setEmail(currentUser.email)
   }, [currentUser])
 
+
   const handleChangeName = (e) => {
+    const validName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u.test(
+      e.target.value
+    )
+
  if (!e.target.value.length) {
-      setErrorName('Имя пользователя должно быть заполнено.')
+     setErrorName('Имя пользователя должно быть заполнено.')
     } else if (e.target.value.length < 2) {
       setErrorName('Имя пользователя должно быть не менее 2 символов.')
+    } else if (!validName) {
+      setErrorName('Имя должно содержать только латиницу, кириллицу, пробел или дефис.')
+    } else if (validName) {
+      setErrorName('')
     } else if (e.target.value.length > 30) {
       setErrorName('Имя пользователя должно быть не более 30 символов.')
     } else {
@@ -32,7 +41,7 @@ function Profile({ onSignOut, userChange, message }) {
   }
 
   const handleChangeEmail = (e) => {
-    const validEmail = /"^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$"/i.test(
+    const validEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       e.target.value
     )
 
@@ -57,6 +66,7 @@ function Profile({ onSignOut, userChange, message }) {
   }
 
   useEffect(() => {
+    console.log('bo')
     if (errorName || errorEmail) {
       setIsFormValid(false)
     } else {
@@ -84,6 +94,7 @@ function Profile({ onSignOut, userChange, message }) {
             Имя
             <input
               className='profile__content-user-nama profile__content-user-info'
+              name='name'
               type='text'
               placeholder='Имя'
               value={name || ''}
@@ -103,6 +114,7 @@ function Profile({ onSignOut, userChange, message }) {
               type='text'
               placeholder='E-mail'
               value={email || ''}
+              pattern="^[A-Za-zА-Яа-яЁё /s -]+$"
               onChange={handleChangeEmail}
               disabled={!isInputDisabled}
             />
@@ -114,9 +126,10 @@ function Profile({ onSignOut, userChange, message }) {
 
           <div className='profile__content-btn'>
             <button
-              className='profile__content-btn__edit-btn'
+              className=
+              'profile__content-btn__edit-btn'
               type='submit'
-              disabled={!isFormValid || name < 2 || email < 2}
+              disabled={!isFormValid}
               onClick={handleInputDisabled}
             >
               Редактировать

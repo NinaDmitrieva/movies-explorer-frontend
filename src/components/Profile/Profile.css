@@ -96,6 +96,13 @@
   transition: opacity linear 0.5s;
 }
 
+.hover-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #c0c0c0;
+  background-color: #ffffff;
+}
+
 .input__profile-error {
  color: #EE3465;
 

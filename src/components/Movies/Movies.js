@@ -78,7 +78,7 @@ export function Movies({
     }
   }, [count, searchedMovies])
 
-//проблема где то тут
+
   const handleSearchAndFilterMovies = (movies, kyeWord, checkBoxStatus) => {
     const moviesList = searchAndFilterMovies(movies, kyeWord, checkBoxStatus)
 
@@ -89,7 +89,6 @@ export function Movies({
   }
 
   const handleSearchMovies = (keyWord, checkBoxStatus) => {
-    console.log("error")
     setToRenderMovies([])
     setKeyWord(keyWord)
     setCheckBoxStatus(checkBoxStatus)
@@ -99,6 +98,7 @@ export function Movies({
 
 
     if (!initialMovies.length) {
+      console.log('go')
       MoviesApi
         .getMovies()
         .then((data) => {

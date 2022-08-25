@@ -7,9 +7,6 @@ import { searchAndFilterMovies } from '../../utils/utils'
 function SavedMovies({
   moviesCardList,
   onDelete,
-  isSuccess,
-  isInfoTooltipOpen,
-  errorMessage,
 }) {
 
   const [searchedMovies, setSearchedMovies] = useState([])
