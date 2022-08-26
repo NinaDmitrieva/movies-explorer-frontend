@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {  useState } from 'react';
 import './Register.css';
 import Form from '../Form/Form';
 import useFormWithValidation from '../../utils/validation.js';
 
-function Register({ onRegister }){
+function Register({ onRegister, message }){
+  const [isMessage, setIsMessage] = useState(false)
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
@@ -14,6 +15,7 @@ function Register({ onRegister }){
       password: values.password
     });
     resetForm();
+    setIsMessage(true)
   }
 
   return (
@@ -74,7 +76,18 @@ function Register({ onRegister }){
           onChange={handleChange}
         />
         <span className="input__error input__error-border">{errors.password}</span>
+
       </div>
+
+      <p
+        className={
+          isMessage
+            ? 'input__error-reg-res'
+            : ''
+        }
+      >
+        {message}
+      </p>
 
     </Form>
   )

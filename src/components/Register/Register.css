@@ -18,10 +18,14 @@
   line-height: 16px;
 
 }
-
-/* .input__element-border {
-  margin-bottom: 85px;
-} */
+.input__error-profile-res{
+    padding-top: 30px;
+  color: #3478ee;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: center;
+}
 
 .input__error {
   color: #EE3465;
@@ -34,18 +38,18 @@
   color: #EE3465;
 }
 
-
-@media screen and (max-width: 768px){
-/* .input__element-border {
-  margin-bottom: 69px;
-} */
+.input__error-reg-res{
+  padding-top: 30px;
+  color: #3478ee;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: center;
 }
 
 @media screen and (max-width: 450px){
 .input__element {
   min-width: 260px;
 }
-/* .input__element-border {
-  margin-bottom: 157px;
-} */
+
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   Route,
+  Navigate,
   Routes,
   useNavigate,
   useLocation
@@ -24,7 +25,8 @@ import { CurrentUserContext } from '../../context/CurrentUserContext';
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [savedMovies, setSavedMovies] = useState([])
+  const [savedMovies, setSavedMovies] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -46,7 +48,6 @@ function App() {
       MainApi
         .getSavedMovies()
         .then((data) => {
-
           setSavedMovies(data)
         })
         .catch((err) => {
@@ -68,6 +69,7 @@ function App() {
           navigate(location.pathname);
         })
         .catch((err) => {
+          navigate('/signup')
           console.log(`Ошибка проверки токена: ${err}`);
           setLoggedIn(false);
         });
@@ -79,31 +81,42 @@ function App() {
       .authorization(email, password)
       .then((res) => {
         if (res) {
+          setErrorMessage(
+            'Авторизация прошла успешно!'
+          )
           localStorage.setItem('jwt', res.token)
           setLoggedIn(true);
           navigate('/movies');
         }
       })
       .catch((err) => {
+        setErrorMessage(
+          'При авторизации произошла ошибка'
+        )
         console.log(err);
       })
   }
 
-  const handleRegisterSubmit = (name, email, password) => {
+  const handleRegisterSubmit = (userData) => {
     auth
-      .register(name, email, password)
+      .register(userData)
       .then(() => {
-          navigate('/signin');
+        handleLoginSubmit(userData);
+        setErrorMessage(
+          'Регистрация прошла успешно!'
+        )
       })
       .catch((err) => {
+        setErrorMessage(
+          'При регистрации произошла ошибка'
+        )
         console.log(err);
-      })
+      });
   }
-
   function exitUser() {
     localStorage.clear();
     setLoggedIn(false);
-    navigate("/signup");
+    navigate("/");
   }
 
   //сохранение фильмов в сохраненках
@@ -156,7 +169,13 @@ function App() {
       .setUpdateUserInfo(userData.name, userData.email)
       .then((res) => {
         setCurrentUser(res);
+        setErrorMessage(
+          'Данные успешно обновлены!'
+        )
       }).catch(err => {
+        setErrorMessage(
+          'При обновлении данных произошла ошибка'
+        )
         console.log(err);
       })
   }
@@ -174,6 +193,7 @@ function App() {
   }
   console.log()
 
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
     <div className="page">
@@ -182,7 +202,7 @@ function App() {
 
           <Route path='/' element={
             <>
-            <Header />
+              <Header loggedIn={loggedIn} />
             <Main />
             <Footer />
             </>
@@ -228,13 +248,42 @@ function App() {
               <Profile
                 onSignOut={exitUser}
                 userChange={handleChangeProfile}
+                message={errorMessage}
               />
           </>
           }>
           </Route>
     </Route>
-        <Route path='/signup' element={<Register onRegister={handleRegisterSubmit} />}></Route>
-        <Route path='/signin' element={<Login onLogin={handleLoginSubmit} />}></Route>
+          <Route
+            path='/signup'
+            element={
+              loggedIn ? (
+                <Navigate to="/movies" replace />
+              ) : (
+                  <Register
+                    onRegister={handleRegisterSubmit}
+                    message={errorMessage}
+                />
+              )
+            }
+          ></Route>
+
+          <Route
+            path='/signin'
+            element={
+              loggedIn ? (
+                <Navigate to="/movies" replace />
+              ) : (
+                  <Login
+                    onLogin={handleLoginSubmit}
+                    message={errorMessage}
+                />
+              )
+            }
+          ></Route>
+
+        {/* <Route path='/signin' element={<Login onLogin={handleLoginSubmit} />}></Route> */}
+
         <Route path='/*' element={<NotFound />}></Route>
 
         </Routes>

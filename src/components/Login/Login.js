@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import Form from '../Form/Form';
 import useFormWithValidation from '../../utils/validation.js';
 
-function Login({onLogin}) {
+function Login({ onLogin, message }) {
+  const [isMessage, setIsMessage] = useState(false)
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
@@ -13,6 +14,7 @@ function Login({onLogin}) {
       password: values.password
     });
     resetForm();
+    setIsMessage(true)
   }
   return (
     <Form title='Рады видеть!'
@@ -55,6 +57,16 @@ function Login({onLogin}) {
         />
         <span className="input__error">{errors.password}</span>
       </div>
+
+      <p
+        className={
+          isMessage
+            ? 'input__error-log-res'
+            : ''
+        }
+      >
+        {message}
+      </p>
 
     </Form>
   )

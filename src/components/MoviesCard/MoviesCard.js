@@ -2,6 +2,7 @@ import React from 'react';
 import './MoviesCard.css';
 import { useLocation, matchPath } from 'react-router'
 import SaveBtn from '../SaveBtn/SaveBtn';
+import { getTimeFromMin } from '../../utils/utils'
 
 function MoviesCard({
   moviesCard,
@@ -48,7 +49,7 @@ function MoviesCard({
       <div className='movies-card__content'>
         <div className='movies-card__content-text'>
           <h3 className='movies-card__content-text-title'>{moviesCard.nameRU}</h3>
-          <p className='movies-card__content-text-duration'>{moviesCard.duration}</p>
+          <p className='movies-card__content-text-duration'>{getTimeFromMin(moviesCard.duration)}</p>
         </div>
         {matchPath({ path: '/movies' }, location.pathname) && (
           <SaveBtn

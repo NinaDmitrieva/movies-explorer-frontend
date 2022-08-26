@@ -7,21 +7,19 @@ export default function reqResponse(res) {
   return Promise.reject(`Все сломалось${res.status}`)
 }
 
-export const register = ({name, email, password}) => {
+
+export const register = ({ name, email, password }) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      name:name,
-      email:email,
-      password:password
-    })
+    body: JSON.stringify({ name, email, password })
   })
     .then(reqResponse)
 };
+
 
 export const authorization = ({email, password}) => {
   return fetch(`${BASE_URL}/signin`, {

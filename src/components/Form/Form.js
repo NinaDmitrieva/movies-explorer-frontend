@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import './Form.css';
 import Logo from '../../images/logo.svg';
 
@@ -8,7 +9,9 @@ function Form({ title, children, btntext, text, path, pathname, isValid, onSubmi
     <div className='form'>
 
       <div className='form-up'>
-        <img className='logo' alt='Логотип' src={Logo} />
+        <NavLink to="/">
+          <img className='header__logo' src={Logo} alt='Лого' />
+        </NavLink>
         <h3 className='form-up-title'>{title}</h3>
       </div>
 

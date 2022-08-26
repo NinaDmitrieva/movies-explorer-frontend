@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 
-function Profile({ onSignOut, userChange}) {
+function Profile({ onSignOut, userChange, message }) {
 
   const currentUser = React.useContext(CurrentUserContext)
   const [name, setName] = useState('')
@@ -11,6 +11,7 @@ function Profile({ onSignOut, userChange}) {
   const [errorEmail, setErrorEmail] = useState('')
   const [isInputDisabled, setIsInputDisabled] = useState(true)
   const [isFormValid, setIsFormValid] = useState(false)
+  const [isMessage, setIsMessage] = useState(false)
 
 
   useEffect(() => {
@@ -63,6 +64,7 @@ function Profile({ onSignOut, userChange}) {
     e.preventDefault()
     userChange({ name, email })
     handleInputDisabled()
+    setIsMessage(true)
   }
 
   useEffect(() => {
@@ -124,6 +126,15 @@ function Profile({ onSignOut, userChange}) {
             {errorEmail}
           </span>
 
+          <p
+            className={
+              isMessage
+                ? 'input__error-profile-res'
+                : ''
+            }
+          >
+            {message}
+          </p>
           <div className='profile__content-btn'>
             <button
               className=

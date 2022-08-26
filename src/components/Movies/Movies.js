@@ -11,6 +11,7 @@ import {
 } from '../../utils/utils';
 
 import {
+  DESKTOP_WIDTH,
   MOBILE_WIDTH,
   TABLET_WIDTH,
   MOBILE_COUNT,
@@ -18,6 +19,7 @@ import {
   DESKTOP_COUNT,
   TABLET_MOBILE_ADDITIONAL,
   DESKTOP_ADDITIONAL,
+  DESKTOP_WIDTH_ADDITIONAL,
 } from '../../utils/const'
 
 export function Movies({
@@ -46,7 +48,10 @@ export function Movies({
   const windowSize = document.documentElement.clientWidth
 
   useEffect(() => {
-    if (windowSize > TABLET_WIDTH) {
+    if (windowSize > DESKTOP_WIDTH) {
+      setCount(DESKTOP_COUNT)
+      setAdditional(DESKTOP_WIDTH_ADDITIONAL)
+    }else if (windowSize > TABLET_WIDTH) {
       setCount(DESKTOP_COUNT)
       setAdditional(DESKTOP_ADDITIONAL)
     } else if (windowSize <= TABLET_WIDTH && windowSize >= MOBILE_WIDTH) {
@@ -98,7 +103,7 @@ export function Movies({
 
 
     if (!initialMovies.length) {
-      console.log('go')
+      setIsLoading(true)
       MoviesApi
         .getMovies()
         .then((data) => {

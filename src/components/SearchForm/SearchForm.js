@@ -56,6 +56,7 @@ function SearchForm({ onSearchMovies, savedMoviesRoute }) {
       <form
       className='search-form'
       onSubmit={handleSubmitSearchForm}
+      noValidate
       >
         <div className='search-form__content' >
 
@@ -69,15 +70,16 @@ function SearchForm({ onSearchMovies, savedMoviesRoute }) {
           value={keyWord || ''}
           />
 
-          <span className='search-form__error'>
-            {error ? ' Нужно ввести ключевое слово.' : ''}
-          </span>
-
           <button
           className='search-form__button'
           type='submit'
           onChange={handleCheckBoxChange}
           >Поиск</button>
+
+          <span className='search-form__error'>
+            {error ? ' Нужно ввести ключевое слово.' : ''}
+          </span>
+
         </div>
 
         <div className='checkbox'>
