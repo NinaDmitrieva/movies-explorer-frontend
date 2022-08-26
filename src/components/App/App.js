@@ -193,6 +193,10 @@ function App() {
   }
   console.log()
 
+  useEffect(() => {
+    const timer = setTimeout(() => setErrorMessage(''), 1000)
+    return () => clearTimeout(timer)
+  })
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
