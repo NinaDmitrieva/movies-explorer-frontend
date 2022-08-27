@@ -18,7 +18,6 @@ import {
   TABLET_COUNT,
   DESKTOP_COUNT,
   TABLET_MOBILE_ADDITIONAL,
-  DESKTOP_ADDITIONAL,
   DESKTOP_WIDTH_ADDITIONAL,
 } from '../../utils/const'
 
@@ -44,8 +43,19 @@ export function Movies({
   const [isMore, setIsMore] = useState(false)
   const [count, setCount] = useState(0)
   const [additional, setAdditional] = useState(0)
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+  // const windowSize = document.documentElement.clientWidth
 
-  const windowSize = document.documentElement.clientWidth
+  const listenResize = () => {
+    setWindowSize(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', listenResize)
+    return () => {
+      window.removeEventListener('resize', listenResize)
+    }
+  }, [windowSize])
 
   useEffect(() => {
     if (windowSize > DESKTOP_WIDTH) {
@@ -53,7 +63,7 @@ export function Movies({
       setAdditional(DESKTOP_WIDTH_ADDITIONAL)
     }else if (windowSize > TABLET_WIDTH) {
       setCount(DESKTOP_COUNT)
-      setAdditional(DESKTOP_ADDITIONAL)
+      setAdditional(TABLET_MOBILE_ADDITIONAL)
     } else if (windowSize <= TABLET_WIDTH && windowSize >= MOBILE_WIDTH) {
       setCount(TABLET_COUNT)
       setAdditional(TABLET_MOBILE_ADDITIONAL)
@@ -101,7 +111,10 @@ export function Movies({
     localStorage.setItem('keyWord', keyWord)
     localStorage.setItem('checkBoxStatus', checkBoxStatus)
 
-
+    // if (localStorage.getItem('movies')) {
+    //   const arrMovies = JSON.parse(localStorage.getItem('movies'))
+    //   setToRenderMovies(arrMovies)
+    // }
     if (!initialMovies.length) {
       setIsLoading(true)
       MoviesApi
