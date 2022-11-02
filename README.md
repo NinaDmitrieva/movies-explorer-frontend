@@ -14,10 +14,7 @@
 **npm run start** — запускает сервер
 **npm run dev** — запускает сервер с hot-reload
 
-### Ссылки
-[API сервиса](http://api.getmovies.nomoredomains.xyz/)  
-[Макет](https://www.figma.com/file/f9vZoUyjKT6SBKIKKAZrjK/Diploma-(Copy)?node-id=891%3A3857)  
-[Сайт](https://getmovies.nomoredomains.sbs/)  
+  
 
 
 
